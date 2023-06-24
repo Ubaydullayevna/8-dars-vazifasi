@@ -1,31 +1,16 @@
-let css = document.querySelector("codes");
-let color1 = document.querySelector("color1");
-let color2 = document.querySelector("color2");
-let bodys = document.getElementById("gradient");
-let linerDirection = document.getElementsByName("toDirection");
+const body = document.querySelector("body");
+const color1 = document.querySelector(".color1");
+const color2 = document.querySelector(".color2");
+const range = document.querySelector(".range");
+const display = document.querySelector(".display");
+const text = document.querySelector(".text");
 
-function currentSettings() {
-  let cssProp = window
-    .getComputedStyle(bodys, null)
-    .getPropertyValue("background-image");
-
-  css.textContent = cssProp;
-}
-currentSettings();
-
-function returnColor() {
-  bodys.style.background =
-    "liner-gradient(" +
-    linerDirection.values +
-    " ," +
-    color1.values +
-    " ," +
-    color2.values +
-    "(";
-
-  currentSettings();
+function getColor() {
+  body.style.background = `linear-gradient(${range.value}deg, ${color1.value}, ${color2.value})`;
+  display.style.background = `linear-gradient(${range.value}deg,${color1.value},${color2.value})`;
+  text.textContent = `linear-gradient(${range.value}deg,${color1.value},${color2.value})`;
 }
 
-document.querySelector('select[name = "toDirection"]').onchange = returnColor;
-color1.addEventListener("input", returnColor);
-color2.addEventListener("input", returnColor);
+color1.addEventListener("input", getColor);
+color2.addEventListener("input", getColor);
+range.addEventListener("input", getColor);

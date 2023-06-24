@@ -13,12 +13,13 @@ body{
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 139, 253, 0.25) ;
     height: 400px;
+    background-color: aliceblue;
 }
 .display{
     width: 350px;
     height: 200px;
     border: 2px solid white;
-    background: linear-gradient( to right,  #ebffaa ,#528f4c);
+    /* background: linear-gradient( to right,  #ebffaa ,#528f4c); */
      box-shadow: 0 0 20px rgba(0, 139, 253, 0.25) ;
 }
 .codes{
